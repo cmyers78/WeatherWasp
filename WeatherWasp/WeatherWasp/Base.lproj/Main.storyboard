@@ -48,7 +48,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Cities" id="fYY-HB-flJ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zgy-ho-nNO"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zgy-ho-nNO">
+                            <connections>
+                                <action selector="addCityPressed:" destination="CCh-Gy-p58" id="Z7O-lP-kvo"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gdZ-hC-CCW" userLabel="First Responder" sceneMemberID="firstResponder"/>

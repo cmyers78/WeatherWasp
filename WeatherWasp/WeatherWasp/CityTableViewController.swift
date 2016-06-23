@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreLocation
+
 
 class CityTableViewController: UITableViewController {
     
@@ -51,7 +53,38 @@ class CityTableViewController: UITableViewController {
         return cell
     }
  
+    @IBAction func addCityPressed(sender: AnyObject) {
+        
+        let alertController = UIAlertController(title: "Add City", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let saveAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.Default, handler: {  alert -> Void in
+            
+            let cityTextField = alertController.textFields![0] as UITextField
+            let zipcodeTextField = alertController.textFields![1] as UITextField
+            
+            if let name = cityTextField.text {
+                self.cityName = name
+            }
+            
+            if let zip = zipcodeTextField.text {
+                self.zipcode = zip
+            }
+            
+            
+            
+        })
+        
+        
+        
+    }
 
+    
+    
+    
+    
+    
+    
+    
     
     /*
     // MARK: - Navigation
