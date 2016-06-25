@@ -70,21 +70,55 @@ class CityTableViewController: UITableViewController {
                 self.zipcode = zip
             }
             
-            
+            // call geocode
+            self.geocoding(self.zipcode, completion: { (latitude, longitude) in
+                
+                let currentCity = City()
+                
+                    currentCity.latitude = latitude
+                    currentCity.longitude = longitude
+                    currentCity.name = self.cityName
+                    currentCity.zipCode = self.zipcode
+                
+                
+                
+            })
             
         })
         
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: {
+            (action : UIAlertAction!) -> Void in
+        })
         
+        alertController.addTextFieldWithConfigurationHandler {(textField : UITextField!) -> Void in
+            textField.placeholder = "Enter City Name"
+        }
+        
+        alertController.addTextFieldWithConfigurationHandler {(textField : UITextField!) -> Void in textField.placeholder = "Enter Zip Code"
+        }
+        
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        
+        self.presentViewController(alertController, animated: true, completion:  nil)
         
     }
+        
+    func geocoding(location: String, completion: (Double, Double) -> ()) {
+        CLGeocoder().geocodeAddressString(location) {
+            
+            (placemarks, error) in
+            
+            if placemarks?.count > 0 {
+                let placemark = placemarks?[0]
+                let location = placemark!.location
+                let coordinate = location?.coordinate
+                completion((coordinate?.latitude)!, (coordinate?.longitude)!)
+            }
+        }
+    }
 
-    
-    
-    
-    
-    
-    
-    
+
     
     /*
     // MARK: - Navigation
