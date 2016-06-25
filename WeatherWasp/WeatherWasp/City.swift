@@ -24,5 +24,6 @@ class City: NSObject {
         self.longitude = 0.0
         
     }
-
+    
+    
 }

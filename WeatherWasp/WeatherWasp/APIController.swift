@@ -31,6 +31,17 @@ class APIController: NSObject {
                 if let jsonDictionary = self.parseJSON(data) {
                     print(jsonDictionary)
                 
+                    if let currentlyDict = jsonDictionary["currently"] as? JSONDictionary {
+                        
+                        print(currentlyDict)
+                        
+                        let theWeatherData = WeatherData(dict: currentlyDict)
+                        
+                        print(theWeatherData)
+                        
+                        
+                        
+                    }
                                         
                     
                     
