@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C6CEC0331D1C6A57006A2FB3 /* CityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CEC0321D1C6A57006A2FB3 /* CityTableViewController.swift */; };
+		C6D645351D1ECE37001EDF50 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D645341D1ECE37001EDF50 /* CityTableViewCell.swift */; };
 		C6E0BA231D1C442800E34D57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E0BA221D1C442800E34D57 /* AppDelegate.swift */; };
 		C6E0BA281D1C442800E34D57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6E0BA261D1C442800E34D57 /* Main.storyboard */; };
 		C6E0BA2A1D1C442800E34D57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6E0BA291D1C442800E34D57 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		C6CEC0321D1C6A57006A2FB3 /* CityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
+		C6D645341D1ECE37001EDF50 /* CityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		C6E0BA1F1D1C442800E34D57 /* WeatherWasp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherWasp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E0BA221D1C442800E34D57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6E0BA271D1C442800E34D57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C6D645361D1ECE3F001EDF50 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C6D645341D1ECE37001EDF50 /* CityTableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		C6E0BA161D1C442800E34D57 = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				C6E0BA221D1C442800E34D57 /* AppDelegate.swift */,
+				C6D645361D1ECE3F001EDF50 /* View */,
 				C6E0BA381D1C467C00E34D57 /* Controllers */,
 				C6E0BA261D1C442800E34D57 /* Main.storyboard */,
 				C6E0BA391D1C468500E34D57 /* Modal */,
@@ -156,6 +167,7 @@
 			files = (
 				C6CEC0331D1C6A57006A2FB3 /* CityTableViewController.swift in Sources */,
 				C6E0BA371D1C462100E34D57 /* City.swift in Sources */,
+				C6D645351D1ECE37001EDF50 /* CityTableViewCell.swift in Sources */,
 				C6E0BA231D1C442800E34D57 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,6 +16,8 @@ class CityTableViewController: UITableViewController {
     var zipcode : String = ""
     
     var citiesArray = [City]()
+    var theCity = City()
+    
     
     
     override func viewDidLoad() {
@@ -42,14 +44,18 @@ class CityTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return self.citiesArray.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! CityTableViewCell
 
-        // Configure the cell...
+        self.theCity = self.citiesArray[indexPath.row]
+        
+        cell.cityNameLabel.text = self.theCity.name
+        cell.zipcodeLabel.text = self.theCity.zipCode
+        
 
         return cell
     }
