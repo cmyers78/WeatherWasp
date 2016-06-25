@@ -30,6 +30,10 @@ class APIController: NSObject {
                 
                 if let jsonDictionary = self.parseJSON(data) {
                     print(jsonDictionary)
+                
+                                        
+                    
+                    
                     
                 } else {
                     print("I could not parse the dictionary")

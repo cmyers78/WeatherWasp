@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C678CAD51D1F237A005DBF27 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C678CAD41D1F2379005DBF27 /* WeatherData.swift */; };
 		C6CEC0331D1C6A57006A2FB3 /* CityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CEC0321D1C6A57006A2FB3 /* CityTableViewController.swift */; };
 		C6D645351D1ECE37001EDF50 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D645341D1ECE37001EDF50 /* CityTableViewCell.swift */; };
 		C6D645381D1EE37A001EDF50 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D645371D1EE37A001EDF50 /* Constants.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C678CAD41D1F2379005DBF27 /* WeatherData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		C6CEC0321D1C6A57006A2FB3 /* CityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
 		C6D645341D1ECE37001EDF50 /* CityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		C6D645371D1EE37A001EDF50 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				C6E0BA361D1C462100E34D57 /* City.swift */,
+				C678CAD41D1F2379005DBF27 /* WeatherData.swift */,
 			);
 			name = Modal;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			files = (
 				C6D645381D1EE37A001EDF50 /* Constants.swift in Sources */,
 				C6CEC0331D1C6A57006A2FB3 /* CityTableViewController.swift in Sources */,
+				C678CAD51D1F237A005DBF27 /* WeatherData.swift in Sources */,
 				C6D6453A1D1EE3F3001EDF50 /* APIController.swift in Sources */,
 				C6E0BA371D1C462100E34D57 /* City.swift in Sources */,
 				C6D645351D1ECE37001EDF50 /* CityTableViewCell.swift in Sources */,
