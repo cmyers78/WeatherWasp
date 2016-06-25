@@ -15,6 +15,7 @@ class CityTableViewController: UITableViewController {
     var cityName : String = ""
     var zipcode : String = ""
     
+    var citiesArray = [City]()
     
     
     override func viewDidLoad() {
@@ -80,9 +81,15 @@ class CityTableViewController: UITableViewController {
                     currentCity.name = self.cityName
                     currentCity.zipCode = self.zipcode
                 
+                self.citiesArray.append(currentCity)
                 
-                
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                    print(currentCity.latitude, currentCity.longitude, currentCity.zipCode)
+                    
+                })
             })
+            print(self.citiesArray.count)
             
         })
         
