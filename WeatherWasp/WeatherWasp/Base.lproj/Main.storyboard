@@ -97,10 +97,31 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="fuy-cI-HzR" kind="show" identifier="WeatherSegue" id="rRp-zi-uOH"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gdZ-hC-CCW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="884" y="991"/>
+        </scene>
+        <!--Weather Info View Controller-->
+        <scene sceneID="iDE-Yl-Y5S">
+            <objects>
+                <viewController id="fuy-cI-HzR" customClass="WeatherInfoViewController" customModule="WeatherWasp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BiJ-Co-Kyt"/>
+                        <viewControllerLayoutGuide type="bottom" id="RK9-cX-HWL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Jw-cN-HPV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LOV-Cb-VG6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1643" y="991"/>
         </scene>
     </scenes>
     <resources>

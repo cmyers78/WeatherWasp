@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C678CAD51D1F237A005DBF27 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C678CAD41D1F2379005DBF27 /* WeatherData.swift */; };
+		C6CD765B1D20E743008E3732 /* WeatherInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CD765A1D20E743008E3732 /* WeatherInfoViewController.swift */; };
 		C6CEC0331D1C6A57006A2FB3 /* CityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CEC0321D1C6A57006A2FB3 /* CityTableViewController.swift */; };
 		C6D645351D1ECE37001EDF50 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D645341D1ECE37001EDF50 /* CityTableViewCell.swift */; };
 		C6D645381D1EE37A001EDF50 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D645371D1EE37A001EDF50 /* Constants.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		C678CAD41D1F2379005DBF27 /* WeatherData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		C6CD765A1D20E743008E3732 /* WeatherInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherInfoViewController.swift; sourceTree = "<group>"; };
 		C6CEC0321D1C6A57006A2FB3 /* CityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
 		C6D645341D1ECE37001EDF50 /* CityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		C6D645371D1EE37A001EDF50 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			children = (
 				C6CEC0321D1C6A57006A2FB3 /* CityTableViewController.swift */,
 				C6D645391D1EE3F3001EDF50 /* APIController.swift */,
+				C6CD765A1D20E743008E3732 /* WeatherInfoViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				C678CAD51D1F237A005DBF27 /* WeatherData.swift in Sources */,
 				C6D6453A1D1EE3F3001EDF50 /* APIController.swift in Sources */,
 				C6E0BA371D1C462100E34D57 /* City.swift in Sources */,
+				C6CD765B1D20E743008E3732 /* WeatherInfoViewController.swift in Sources */,
 				C6D645351D1ECE37001EDF50 /* CityTableViewCell.swift in Sources */,
 				C6E0BA231D1C442800E34D57 /* AppDelegate.swift in Sources */,
 			);

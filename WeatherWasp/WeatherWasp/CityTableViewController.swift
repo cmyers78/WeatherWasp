@@ -59,6 +59,22 @@ class CityTableViewController: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        self.theCity = self.citiesArray[indexPath.row]
+        
+        performSegueWithIdentifier("WeatherSegue", sender: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "WeatherSegue" {
+            
+            if let controller = segue.destinationViewController as? WeatherInfoViewController {
+                controller.passedCity = self.theCity
+            }
+        }
+    }
  
     @IBAction func addCityPressed(sender: AnyObject) {
         
