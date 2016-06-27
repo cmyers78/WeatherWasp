@@ -14,9 +14,15 @@ protocol WeatherAPIDelegate : class {
 
 class WeatherInfoViewController: UIViewController, WeatherAPIDelegate {
 
+    @IBOutlet weak var cityNameLabel: UILabel!
+    
+    @IBOutlet weak var temperatureLabel: UILabel!
+    
     var passedCity = City()
     
     let apiController = APIController()
+    
+    var currentWeather = WeatherData()
     
     
     
@@ -28,6 +34,10 @@ class WeatherInfoViewController: UIViewController, WeatherAPIDelegate {
         let latlong = ("\(self.passedCity.latitude)" + "," + "\(self.passedCity.longitude)")
         
         self.apiController.fetchWeather(latlong)
+        
+        self.cityNameLabel.text = self.passedCity.name
+        self.temperatureLabel.text = String(self.currentWeather.temperature)
+        
         
         
         

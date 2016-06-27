@@ -116,8 +116,33 @@
                     <view key="view" contentMode="scaleToFill" id="7Jw-cN-HPV">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Btl-4L-xvm">
+                                <rect key="frame" x="279" y="169" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXo-9K-83H">
+                                <rect key="frame" x="279" y="289" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lXo-9K-83H" firstAttribute="centerX" secondItem="7Jw-cN-HPV" secondAttribute="centerX" id="A2P-If-u5i"/>
+                            <constraint firstItem="Btl-4L-xvm" firstAttribute="top" secondItem="BiJ-Co-Kyt" secondAttribute="bottom" constant="105" id="Bzz-ew-s4R"/>
+                            <constraint firstItem="Btl-4L-xvm" firstAttribute="centerX" secondItem="7Jw-cN-HPV" secondAttribute="centerX" id="N3N-Ug-tZQ"/>
+                            <constraint firstItem="lXo-9K-83H" firstAttribute="top" secondItem="Btl-4L-xvm" secondAttribute="bottom" constant="99" id="cch-gs-MoE"/>
+                            <constraint firstItem="Btl-4L-xvm" firstAttribute="leading" secondItem="7Jw-cN-HPV" secondAttribute="leadingMargin" constant="259" id="dre-hn-921"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityNameLabel" destination="Btl-4L-xvm" id="Cr2-fU-M5t"/>
+                        <outlet property="temperatureLabel" destination="lXo-9K-83H" id="pag-na-xIH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LOV-Cb-VG6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
