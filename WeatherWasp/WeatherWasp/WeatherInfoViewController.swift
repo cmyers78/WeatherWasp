@@ -22,12 +22,12 @@ class WeatherInfoViewController: UIViewController, WeatherAPIDelegate {
     
     let apiController = APIController()
     
-    var currentWeather = WeatherData()
     
     
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
         self.apiController.delegate = self
         
@@ -36,14 +36,9 @@ class WeatherInfoViewController: UIViewController, WeatherAPIDelegate {
         self.apiController.fetchWeather(latlong)
         
         self.cityNameLabel.text = self.passedCity.name
-        self.temperatureLabel.text = String(self.currentWeather.temperature)
+       
+        self.temperatureLabel.text = "0.00000"
         
-        
-        
-        
-        
-        
-
         
         
         
@@ -51,6 +46,9 @@ class WeatherInfoViewController: UIViewController, WeatherAPIDelegate {
 
     func passWeather(weather : WeatherData) {
         
+        print("the weather has passed")
+         self.temperatureLabel.text = "99.9" //String(weather.temperature)
     }
 
+    
 }
