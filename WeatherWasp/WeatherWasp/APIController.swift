@@ -37,7 +37,10 @@ class APIController: NSObject {
                         
                         let theWeatherData = WeatherData(dict: currentlyDict)
                         
-                        self.delegate?.passWeather(theWeatherData)
+                        dispatch_async(dispatch_get_main_queue() , {
+                            self.delegate?.passWeather(theWeatherData)
+                        })
+                        
                         
                         
                         print(theWeatherData)

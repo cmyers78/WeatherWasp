@@ -23,16 +23,7 @@ class CityTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+       
     }
 
     // MARK: - Table view data source
@@ -59,6 +50,7 @@ class CityTableViewController: UITableViewController {
 
         return cell
     }
+    // MARK: Navigation
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
@@ -75,7 +67,7 @@ class CityTableViewController: UITableViewController {
             }
         }
     }
- 
+    // MARK: Add a City
     @IBAction func addCityPressed(sender: AnyObject) {
         
         let alertController = UIAlertController(title: "Add City", message: "", preferredStyle: UIAlertControllerStyle.Alert)
@@ -132,7 +124,7 @@ class CityTableViewController: UITableViewController {
         self.presentViewController(alertController, animated: true, completion:  nil)
         
     }
-        
+    // MARK: Geocoding app
     func geocoding(location: String, completion: (Double, Double) -> ()) {
         CLGeocoder().geocodeAddressString(location) {
             
@@ -148,15 +140,5 @@ class CityTableViewController: UITableViewController {
     }
 
 
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

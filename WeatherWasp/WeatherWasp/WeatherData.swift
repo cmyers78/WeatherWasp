@@ -66,7 +66,7 @@ class WeatherData: NSObject {
             print("I could not parse humidity")
         }
         
-        if let wind = dict["windspeed"] as? Double {
+        if let wind = dict["windSpeed"] as? Double {
             self.windSpeed = wind
             
         } else {
