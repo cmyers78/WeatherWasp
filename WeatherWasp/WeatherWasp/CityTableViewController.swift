@@ -18,12 +18,8 @@ class CityTableViewController: UITableViewController {
     var citiesArray = [City]()
     var theCity = City()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
     }
 
     // MARK: - Table view data source
@@ -98,6 +94,9 @@ class CityTableViewController: UITableViewController {
                 self.citiesArray.append(currentCity)
                 
                 dispatch_async(dispatch_get_main_queue(), {
+                    
+                    // could also move the append city to here as well
+                    
                     self.tableView.reloadData()
                     print(currentCity.latitude, currentCity.longitude, currentCity.zipCode)
                     
