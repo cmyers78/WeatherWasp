@@ -120,14 +120,14 @@
                             <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weatherbackground" translatesAutoresizingMaskIntoConstraints="NO" id="VeM-zc-jaz">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXo-9K-83H">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXo-9K-83H">
                                 <rect key="frame" x="220" y="149" width="90" height="103"/>
                                 <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="90"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Btl-4L-xvm">
-                                <rect key="frame" x="242" y="94" width="52" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Btl-4L-xvm">
+                                <rect key="frame" x="239" y="94" width="52" height="35"/>
                                 <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -139,19 +139,48 @@
                                     <constraint firstAttribute="height" constant="150" id="m0R-Yw-exP"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partly Cloudy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="737-Ff-htd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partly Cloudy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="737-Ff-htd">
                                 <rect key="frame" x="22" y="282" width="167" height="35"/>
                                 <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Precipitation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xc-Qr-4Kn">
+                                <rect key="frame" x="65" y="351" width="88" height="20"/>
+                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irb-g0-Ykx">
+                                <rect key="frame" x="85" y="386" width="49" height="33"/>
+                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8SI-db-POq">
+                                <rect key="frame" x="220" y="351" width="67" height="20"/>
+                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80.0 %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cA4-LF-43S">
+                                <rect key="frame" x="213" y="386" width="81" height="33"/>
+                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.36074948310852051" green="0.69850414991378784" blue="0.91084152460098267" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="VeM-zc-jaz" firstAttribute="leading" secondItem="Irb-g0-Ykx" secondAttribute="trailing" constant="-134" id="1Sa-h6-fMh"/>
                             <constraint firstItem="VeM-zc-jaz" firstAttribute="top" secondItem="BiJ-Co-Kyt" secondAttribute="bottom" id="1fZ-Jz-dGo"/>
                             <constraint firstItem="lXo-9K-83H" firstAttribute="leading" secondItem="hsD-sA-0X9" secondAttribute="trailing" constant="40" id="3OL-37-wNG"/>
                             <constraint firstItem="hsD-sA-0X9" firstAttribute="top" secondItem="BiJ-Co-Kyt" secondAttribute="bottom" constant="30" id="B4Y-Xs-b6e"/>
-                            <constraint firstItem="Btl-4L-xvm" firstAttribute="leading" secondItem="hsD-sA-0X9" secondAttribute="trailing" constant="62" id="HZn-zy-A6v"/>
+                            <constraint firstItem="8SI-db-POq" firstAttribute="top" secondItem="lXo-9K-83H" secondAttribute="bottom" constant="99" id="DmB-vg-qY0"/>
+                            <constraint firstItem="Irb-g0-Ykx" firstAttribute="top" secondItem="7xc-Qr-4Kn" secondAttribute="bottom" constant="15" id="Fqp-KI-FFF"/>
+                            <constraint firstItem="Btl-4L-xvm" firstAttribute="leading" secondItem="hsD-sA-0X9" secondAttribute="trailing" constant="59" id="HZn-zy-A6v"/>
+                            <constraint firstItem="VeM-zc-jaz" firstAttribute="leading" secondItem="7xc-Qr-4Kn" secondAttribute="trailing" constant="-153" id="LuI-Zu-npv"/>
+                            <constraint firstItem="cA4-LF-43S" firstAttribute="leading" secondItem="Irb-g0-Ykx" secondAttribute="trailing" constant="79" id="O89-oA-RdJ"/>
                             <constraint firstItem="737-Ff-htd" firstAttribute="top" secondItem="hsD-sA-0X9" secondAttribute="bottom" constant="38" id="Qv3-BL-npk"/>
                             <constraint firstItem="hsD-sA-0X9" firstAttribute="leading" secondItem="7Jw-cN-HPV" secondAttribute="leading" constant="30" id="aXJ-ts-B9A"/>
                             <constraint firstItem="737-Ff-htd" firstAttribute="leading" secondItem="7Jw-cN-HPV" secondAttribute="leadingMargin" constant="2" id="fMx-Fd-Pg5"/>
@@ -159,7 +188,10 @@
                             <constraint firstAttribute="trailing" secondItem="VeM-zc-jaz" secondAttribute="trailing" id="m7O-Kh-UOe"/>
                             <constraint firstItem="Btl-4L-xvm" firstAttribute="top" secondItem="BiJ-Co-Kyt" secondAttribute="bottom" constant="30" id="mgP-dF-10V"/>
                             <constraint firstItem="VeM-zc-jaz" firstAttribute="leading" secondItem="7Jw-cN-HPV" secondAttribute="leading" id="nFE-kc-PR6"/>
+                            <constraint firstItem="cA4-LF-43S" firstAttribute="top" secondItem="8SI-db-POq" secondAttribute="bottom" constant="15" id="vhG-bd-TCo"/>
+                            <constraint firstItem="8SI-db-POq" firstAttribute="leading" secondItem="7xc-Qr-4Kn" secondAttribute="trailing" constant="67" id="vhU-pe-8fv"/>
                             <constraint firstItem="lXo-9K-83H" firstAttribute="top" secondItem="Btl-4L-xvm" secondAttribute="bottom" constant="20" id="xdi-1U-hFw"/>
+                            <constraint firstItem="7xc-Qr-4Kn" firstAttribute="top" secondItem="737-Ff-htd" secondAttribute="bottom" constant="34" id="zHv-Y5-O9F"/>
                         </constraints>
                     </view>
                     <connections>

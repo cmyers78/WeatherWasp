@@ -37,7 +37,7 @@ class WeatherInfoViewController: UIViewController, WeatherAPIDelegate {
         
         self.cityNameLabel.text = self.passedCity.name
        
-        self.temperatureLabel.text = ""
+        self.temperatureLabel.text = "00°"
         
         
         
@@ -47,7 +47,7 @@ class WeatherInfoViewController: UIViewController, WeatherAPIDelegate {
     func passWeather(weather : WeatherData) {
         
         print("the weather has passed")
-        self.temperatureLabel.text = String(Int(weather.temperature))
+        self.temperatureLabel.text = String(Int(weather.temperature)) + "°"
         
     }
 
