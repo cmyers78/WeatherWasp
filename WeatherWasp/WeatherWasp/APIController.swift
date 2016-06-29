@@ -41,38 +41,19 @@ class APIController: NSObject {
                             self.delegate?.passWeather(theWeatherData)
                         })
                         
-                        
-                        
                         print(theWeatherData)
-                        
-                        
-                        
                     }
-                                        
-                    
-                    
                     
                 } else {
                     print("I could not parse the dictionary")
                 }
-                
-                
-                
-                
             })
                 task.resume()
             
         } else {
             print("Not a valid url \(urlString)")
         }
-
-        
-        
     }
-    
-    
-    
-    
     
     func parseJSON(data: NSData?) -> JSONDictionary? {
         
@@ -80,13 +61,10 @@ class APIController: NSObject {
         
         if let data = data {
             do {
-                
                 if let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? JSONDictionary {
                     
                     theDictionary = jsonDictionary
                     //print(jsonDictionary)
-                    
-                    
                     
                 } else {
                     print("Could not parse jsonDictionary")
@@ -98,7 +76,4 @@ class APIController: NSObject {
         }
         return theDictionary
     }
-
-    
-
 }
