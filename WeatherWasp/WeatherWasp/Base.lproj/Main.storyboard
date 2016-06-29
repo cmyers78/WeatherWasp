@@ -117,16 +117,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weatherbackground" translatesAutoresizingMaskIntoConstraints="NO" id="VeM-zc-jaz">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXo-9K-83H">
                                 <rect key="frame" x="220" y="149" width="90" height="103"/>
                                 <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="90"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Btl-4L-xvm">
                                 <rect key="frame" x="242" y="94" width="52" height="35"/>
                                 <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="30"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="partly-cloudy-day" translatesAutoresizingMaskIntoConstraints="NO" id="hsD-sA-0X9">
@@ -139,19 +142,23 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partly Cloudy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="737-Ff-htd">
                                 <rect key="frame" x="22" y="282" width="167" height="35"/>
                                 <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="30"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.36074948310852051" green="0.69850414991378784" blue="0.91084152460098267" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="VeM-zc-jaz" firstAttribute="top" secondItem="BiJ-Co-Kyt" secondAttribute="bottom" id="1fZ-Jz-dGo"/>
                             <constraint firstItem="lXo-9K-83H" firstAttribute="leading" secondItem="hsD-sA-0X9" secondAttribute="trailing" constant="40" id="3OL-37-wNG"/>
                             <constraint firstItem="hsD-sA-0X9" firstAttribute="top" secondItem="BiJ-Co-Kyt" secondAttribute="bottom" constant="30" id="B4Y-Xs-b6e"/>
                             <constraint firstItem="Btl-4L-xvm" firstAttribute="leading" secondItem="hsD-sA-0X9" secondAttribute="trailing" constant="62" id="HZn-zy-A6v"/>
                             <constraint firstItem="737-Ff-htd" firstAttribute="top" secondItem="hsD-sA-0X9" secondAttribute="bottom" constant="38" id="Qv3-BL-npk"/>
                             <constraint firstItem="hsD-sA-0X9" firstAttribute="leading" secondItem="7Jw-cN-HPV" secondAttribute="leading" constant="30" id="aXJ-ts-B9A"/>
                             <constraint firstItem="737-Ff-htd" firstAttribute="leading" secondItem="7Jw-cN-HPV" secondAttribute="leadingMargin" constant="2" id="fMx-Fd-Pg5"/>
+                            <constraint firstItem="RK9-cX-HWL" firstAttribute="top" secondItem="VeM-zc-jaz" secondAttribute="bottom" id="iUA-co-dVJ"/>
+                            <constraint firstAttribute="trailing" secondItem="VeM-zc-jaz" secondAttribute="trailing" id="m7O-Kh-UOe"/>
                             <constraint firstItem="Btl-4L-xvm" firstAttribute="top" secondItem="BiJ-Co-Kyt" secondAttribute="bottom" constant="30" id="mgP-dF-10V"/>
+                            <constraint firstItem="VeM-zc-jaz" firstAttribute="leading" secondItem="7Jw-cN-HPV" secondAttribute="leading" id="nFE-kc-PR6"/>
                             <constraint firstItem="lXo-9K-83H" firstAttribute="top" secondItem="Btl-4L-xvm" secondAttribute="bottom" constant="20" id="xdi-1U-hFw"/>
                         </constraints>
                     </view>
@@ -169,5 +176,6 @@
         <image name="1466884614_weather_ios7_ios_7" width="118" height="118"/>
         <image name="info" width="32" height="32"/>
         <image name="partly-cloudy-day" width="71" height="56"/>
+        <image name="weatherbackground" width="1024" height="670"/>
     </resources>
 </document>
