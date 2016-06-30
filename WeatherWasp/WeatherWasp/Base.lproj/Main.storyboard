@@ -132,7 +132,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="partly-cloudy-day" translatesAutoresizingMaskIntoConstraints="NO" id="hsD-sA-0X9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hsD-sA-0X9">
                                 <rect key="frame" x="30" y="94" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="MZB-hs-n7N"/>
@@ -196,6 +196,10 @@
                     </view>
                     <connections>
                         <outlet property="cityNameLabel" destination="Btl-4L-xvm" id="Cr2-fU-M5t"/>
+                        <outlet property="humidLabel" destination="cA4-LF-43S" id="0fg-8j-dAE"/>
+                        <outlet property="imageView" destination="hsD-sA-0X9" id="d2V-n4-jhh"/>
+                        <outlet property="precipLabel" destination="Irb-g0-Ykx" id="Qg2-5D-0lo"/>
+                        <outlet property="summaryLabel" destination="737-Ff-htd" id="fpQ-eI-IMS"/>
                         <outlet property="temperatureLabel" destination="lXo-9K-83H" id="pag-na-xIH"/>
                     </connections>
                 </viewController>
@@ -207,7 +211,6 @@
     <resources>
         <image name="1466884614_weather_ios7_ios_7" width="118" height="118"/>
         <image name="info" width="32" height="32"/>
-        <image name="partly-cloudy-day" width="71" height="56"/>
         <image name="weatherbackground" width="1024" height="670"/>
     </resources>
 </document>
