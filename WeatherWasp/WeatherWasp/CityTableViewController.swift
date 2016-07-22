@@ -12,6 +12,8 @@ import CoreLocation
 
 class CityTableViewController: UITableViewController {
     
+    let kCITY = "kCITY"
+    
     var cityName : String = ""
     var zipcode : String = ""
     
@@ -20,6 +22,9 @@ class CityTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.loadCityArray()
+        
     }
 
     // MARK: - Table view data source
@@ -34,6 +39,17 @@ class CityTableViewController: UITableViewController {
         return self.citiesArray.count
     }
 
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            self.citiesArray.removeAtIndex(indexPath.row)
+            self.tableView.reloadData()
+            self.saveCityArray()
+        }
+    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! CityTableViewCell
@@ -92,6 +108,7 @@ class CityTableViewController: UITableViewController {
                     currentCity.zipCode = self.zipcode
                 
                 self.citiesArray.append(currentCity)
+                self.saveCityArray()
                 
                 dispatch_async(dispatch_get_main_queue(), {
                     
@@ -138,6 +155,30 @@ class CityTableViewController: UITableViewController {
         }
     }
 
-
+    func saveCityArray() {
+        
+        let savedCity = NSKeyedArchiver.archivedDataWithRootObject(self.citiesArray)
+            
+        NSUserDefaults.standardUserDefaults().setObject(savedCity, forKey: kCITY)
+        
+        
+        NSUserDefaults.standardUserDefaults().synchronize()
+        
+    }
+    
+    func loadCityArray() {
+        
+        if let data = NSUserDefaults.standardUserDefaults().objectForKey(kCITY) as? NSData {
+            
+            if let arrayOfCities = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [City] {
+                
+                self.citiesArray = arrayOfCities
+                self.tableView.reloadData()
+            }
+            
+        } else {
+            print ("no items saved")
+        }
+    }
 
 }

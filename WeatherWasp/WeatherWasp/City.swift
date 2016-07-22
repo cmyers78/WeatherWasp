@@ -8,22 +8,39 @@
 
 import UIKit
 
-class City: NSObject {
+class City: NSObject, NSCoding {
+    
+    let kNAME = "kNAME"
+    let kZIP = "kZIP"
+    let kLAT = "kLAT"
+    let kLONG = "kLONG"
+    
     
     var name : String = ""
     var zipCode : String = ""
     var latitude : Double = 0.0
     var longitude : Double = 0.0
     
-    override init() {
-        super.init()
+    required init?(coder aDecoder : NSCoder) {
         
-        self.name = ""
-        self.zipCode = ""
-        self.latitude = 0.0
-        self.longitude = 0.0
+        self.name = aDecoder.decodeObjectForKey(kNAME) as! String
+        self.zipCode = aDecoder.decodeObjectForKey(kZIP) as! String
+        self.latitude = aDecoder.decodeDoubleForKey(kLAT)
+        self.longitude = aDecoder.decodeDoubleForKey(kLONG)
+        
+        super.init()
         
     }
     
+    override init() {
+        
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(name, forKey: kNAME)
+        aCoder.encodeObject(zipCode, forKey: kZIP)
+        aCoder.encodeDouble(latitude, forKey: kLAT)
+        aCoder.encodeDouble(longitude, forKey: kLONG)
+    }
     
 }

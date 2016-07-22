@@ -121,14 +121,14 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXo-9K-83H">
-                                <rect key="frame" x="220" y="140" width="98" height="104"/>
+                                <rect key="frame" x="220" y="137.5" width="98" height="104"/>
                                 <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="90"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Btl-4L-xvm">
-                                <rect key="frame" x="239" y="94" width="44" height="26"/>
-                                <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="22"/>
+                                <rect key="frame" x="239" y="94" width="40" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -146,25 +146,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Precipitation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xc-Qr-4Kn">
-                                <rect key="frame" x="47" y="343" width="105.5" height="20"/>
+                                <rect key="frame" x="47" y="341" width="105.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irb-g0-Ykx">
-                                <rect key="frame" x="79" y="378" width="55" height="33"/>
+                                <rect key="frame" x="79" y="376" width="55" height="33"/>
                                 <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8SI-db-POq">
-                                <rect key="frame" x="220" y="343" width="78" height="20"/>
+                                <rect key="frame" x="220" y="340.5" width="78" height="20"/>
                                 <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80.0 %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cA4-LF-43S">
-                                <rect key="frame" x="213" y="378" width="90" height="33"/>
+                                <rect key="frame" x="213" y="375.5" width="90" height="33"/>
                                 <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -191,7 +191,7 @@
                             <constraint firstItem="cA4-LF-43S" firstAttribute="top" secondItem="8SI-db-POq" secondAttribute="bottom" constant="15" id="vhG-bd-TCo"/>
                             <constraint firstItem="8SI-db-POq" firstAttribute="leading" secondItem="7xc-Qr-4Kn" secondAttribute="trailing" constant="67" id="vhU-pe-8fv"/>
                             <constraint firstItem="lXo-9K-83H" firstAttribute="top" secondItem="Btl-4L-xvm" secondAttribute="bottom" constant="20" id="xdi-1U-hFw"/>
-                            <constraint firstItem="7xc-Qr-4Kn" firstAttribute="top" secondItem="737-Ff-htd" secondAttribute="bottom" constant="26" id="zHv-Y5-O9F"/>
+                            <constraint firstItem="7xc-Qr-4Kn" firstAttribute="top" secondItem="737-Ff-htd" secondAttribute="bottom" constant="24" id="zHv-Y5-O9F"/>
                         </constraints>
                     </view>
                     <connections>

@@ -54,7 +54,7 @@ class WeatherInfoViewController: UIViewController, WeatherAPIDelegate {
         
         print("the weather has passed")
         self.temperatureLabel.text = String(Int(weather.temperature)) + "°"
-        self.precipLabel.text = String(weather.precipProbability) + "%"
+        self.precipLabel.text = String((weather.precipProbability * 100)) + "%"
         
         let humid = (weather.humidity) * 100
         self.humidLabel.text = String(humid) + "%"
