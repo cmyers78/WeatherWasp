@@ -8,6 +8,30 @@
 
 import UIKit
 import CoreLocation
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 
 class CityTableViewController: UITableViewController {
@@ -29,30 +53,30 @@ class CityTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return self.citiesArray.count
     }
 
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.Delete {
-            self.citiesArray.removeAtIndex(indexPath.row)
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            self.citiesArray.remove(at: indexPath.row)
             self.tableView.reloadData()
             self.saveCityArray()
         }
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! CityTableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CityTableViewCell
 
         self.theCity = self.citiesArray[indexPath.row]
         
@@ -64,27 +88,27 @@ class CityTableViewController: UITableViewController {
     }
     // MARK: Navigation
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         self.theCity = self.citiesArray[indexPath.row]
         
-        performSegueWithIdentifier("WeatherSegue", sender: nil)
+        performSegue(withIdentifier: "WeatherSegue", sender: nil)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "WeatherSegue" {
             
-            if let controller = segue.destinationViewController as? WeatherInfoViewController {
+            if let controller = segue.destination as? WeatherInfoViewController {
                 controller.passedCity = self.theCity
             }
         }
     }
     // MARK: Add a City
-    @IBAction func addCityPressed(sender: AnyObject) {
+    @IBAction func addCityPressed(_ sender: AnyObject) {
         
-        let alertController = UIAlertController(title: "Add City", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        let alertController = UIAlertController(title: "Add City", message: "", preferredStyle: UIAlertControllerStyle.alert)
         
-        let saveAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.Default, handler: {  alert -> Void in
+        let saveAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.default, handler: {  alert -> Void in
             
             let cityTextField = alertController.textFields![0] as UITextField
             let zipcodeTextField = alertController.textFields![1] as UITextField
@@ -110,7 +134,7 @@ class CityTableViewController: UITableViewController {
                 self.citiesArray.append(currentCity)
                 self.saveCityArray()
                 
-                dispatch_async(dispatch_get_main_queue(), {
+                DispatchQueue.main.async(execute: {
                     
                     // could also move the append city to here as well
                     
@@ -123,25 +147,25 @@ class CityTableViewController: UITableViewController {
             
         })
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: {
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: {
             (action : UIAlertAction!) -> Void in
         })
         
-        alertController.addTextFieldWithConfigurationHandler {(textField : UITextField!) -> Void in
+        alertController.addTextField {(textField : UITextField!) -> Void in
             textField.placeholder = "Enter City Name"
         }
         
-        alertController.addTextFieldWithConfigurationHandler {(textField : UITextField!) -> Void in textField.placeholder = "Enter Zip Code"
+        alertController.addTextField {(textField : UITextField!) -> Void in textField.placeholder = "Enter Zip Code"
         }
         
         alertController.addAction(saveAction)
         alertController.addAction(cancelAction)
         
-        self.presentViewController(alertController, animated: true, completion:  nil)
+        self.present(alertController, animated: true, completion:  nil)
         
     }
     // MARK: Geocoding app
-    func geocoding(location: String, completion: (Double, Double) -> ()) {
+    func geocoding(_ location: String, completion: @escaping (Double, Double) -> ()) {
         CLGeocoder().geocodeAddressString(location) {
             
             (placemarks, error) in
@@ -157,20 +181,20 @@ class CityTableViewController: UITableViewController {
 
     func saveCityArray() {
         
-        let savedCity = NSKeyedArchiver.archivedDataWithRootObject(self.citiesArray)
+        let savedCity = NSKeyedArchiver.archivedData(withRootObject: self.citiesArray)
             
-        NSUserDefaults.standardUserDefaults().setObject(savedCity, forKey: kCITY)
+        UserDefaults.standard.set(savedCity, forKey: kCITY)
         
         
-        NSUserDefaults.standardUserDefaults().synchronize()
+        UserDefaults.standard.synchronize()
         
     }
     
     func loadCityArray() {
         
-        if let data = NSUserDefaults.standardUserDefaults().objectForKey(kCITY) as? NSData {
+        if let data = UserDefaults.standard.object(forKey: kCITY) as? Data {
             
-            if let arrayOfCities = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [City] {
+            if let arrayOfCities = NSKeyedUnarchiver.unarchiveObject(with: data) as? [City] {
                 
                 self.citiesArray = arrayOfCities
                 self.tableView.reloadData()

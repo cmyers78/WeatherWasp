@@ -10,17 +10,17 @@ import UIKit
 
 class APIController: NSObject {
     
-    let session = NSURLSession.sharedSession()
+    let session = URLSession.shared
     
     weak var delegate : WeatherAPIDelegate?
     
-    func fetchWeather(location : String) {
+    func fetchWeather(_ location : String) {
         
         let urlString = "https://api.forecast.io/forecast/d47e0d371b59ef8e979861e24d10f186/\(location)"
         
-        if let url = NSURL(string: urlString) {
+        if let url = URL(string: urlString) {
             
-            let task = session.dataTaskWithURL(url, completionHandler: {
+            let task = session.dataTask(with: url, completionHandler: {
                 (data, response, error) in
                 
                 if error != nil {
@@ -37,7 +37,7 @@ class APIController: NSObject {
                         
                         let theWeatherData = WeatherData(dict: currentlyDict)
                         
-                        dispatch_async(dispatch_get_main_queue() , {
+                        DispatchQueue.main.async(execute: {
                             self.delegate?.passWeather(theWeatherData)
                         })
                         
@@ -55,13 +55,13 @@ class APIController: NSObject {
         }
     }
     
-    func parseJSON(data: NSData?) -> JSONDictionary? {
+    func parseJSON(_ data: Data?) -> JSONDictionary? {
         
         var theDictionary : JSONDictionary? = nil
         
         if let data = data {
             do {
-                if let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? JSONDictionary {
+                if let jsonDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? JSONDictionary {
                     
                     theDictionary = jsonDictionary
                     //print(jsonDictionary)

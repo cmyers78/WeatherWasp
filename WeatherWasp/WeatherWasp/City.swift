@@ -23,10 +23,10 @@ class City: NSObject, NSCoding {
     
     required init?(coder aDecoder : NSCoder) {
         
-        self.name = aDecoder.decodeObjectForKey(kNAME) as! String
-        self.zipCode = aDecoder.decodeObjectForKey(kZIP) as! String
-        self.latitude = aDecoder.decodeDoubleForKey(kLAT)
-        self.longitude = aDecoder.decodeDoubleForKey(kLONG)
+        self.name = aDecoder.decodeObject(forKey: kNAME) as! String
+        self.zipCode = aDecoder.decodeObject(forKey: kZIP) as! String
+        self.latitude = aDecoder.decodeDouble(forKey: kLAT)
+        self.longitude = aDecoder.decodeDouble(forKey: kLONG)
         
         super.init()
         
@@ -36,11 +36,11 @@ class City: NSObject, NSCoding {
         
     }
     
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(name, forKey: kNAME)
-        aCoder.encodeObject(zipCode, forKey: kZIP)
-        aCoder.encodeDouble(latitude, forKey: kLAT)
-        aCoder.encodeDouble(longitude, forKey: kLONG)
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(name, forKey: kNAME)
+        aCoder.encode(zipCode, forKey: kZIP)
+        aCoder.encode(latitude, forKey: kLAT)
+        aCoder.encode(longitude, forKey: kLONG)
     }
     
 }

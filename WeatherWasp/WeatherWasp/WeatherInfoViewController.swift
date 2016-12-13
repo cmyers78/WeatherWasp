@@ -9,7 +9,7 @@
 import UIKit
 
 protocol WeatherAPIDelegate : class {
-    func passWeather(weather : WeatherData)
+    func passWeather(_ weather : WeatherData)
 }
 
 class WeatherInfoViewController: UIViewController, WeatherAPIDelegate {
@@ -32,7 +32,7 @@ class WeatherInfoViewController: UIViewController, WeatherAPIDelegate {
     let apiController = APIController()
     
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         self.apiController.delegate = self
@@ -50,7 +50,7 @@ class WeatherInfoViewController: UIViewController, WeatherAPIDelegate {
         
     }
 
-    func passWeather(weather : WeatherData) {
+    func passWeather(_ weather : WeatherData) {
         
         print("the weather has passed")
         self.temperatureLabel.text = String(Int(weather.temperature)) + "°"
