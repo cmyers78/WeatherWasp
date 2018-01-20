@@ -39,6 +39,8 @@ class APIController: NSObject {
                         
                         DispatchQueue.main.async(execute: {
                             self.delegate?.passWeather(theWeatherData)
+                            
+                            
                         })
                         
                         print(theWeatherData)

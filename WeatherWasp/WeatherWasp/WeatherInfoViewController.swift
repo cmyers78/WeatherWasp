@@ -106,6 +106,5 @@ class WeatherInfoViewController: UIViewController, WeatherAPIDelegate {
         
         
     }
-
-    
+        
 }
