@@ -67,8 +67,8 @@ class CityTableViewController: UITableViewController {
         return true
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
             self.citiesArray.remove(at: indexPath.row)
             self.tableView.reloadData()
             self.saveCityArray()
@@ -106,9 +106,9 @@ class CityTableViewController: UITableViewController {
     // MARK: Add a City
     @IBAction func addCityPressed(_ sender: AnyObject) {
         
-        let alertController = UIAlertController(title: "Add City", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: "Add City", message: "", preferredStyle: UIAlertController.Style.alert)
         
-        let saveAction = UIAlertAction(title: "Save", style: UIAlertActionStyle.default, handler: {  alert -> Void in
+        let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: {  alert -> Void in
             
             let cityTextField = alertController.textFields![0] as UITextField
             let zipcodeTextField = alertController.textFields![1] as UITextField
@@ -147,7 +147,7 @@ class CityTableViewController: UITableViewController {
             
         })
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: {
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: {
             (action : UIAlertAction!) -> Void in
         })
         
