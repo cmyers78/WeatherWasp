@@ -15,22 +15,16 @@ protocol WeatherAPIDelegate : class {
 class WeatherInfoViewController: UIViewController, WeatherAPIDelegate {
 
     @IBOutlet weak var cityNameLabel: UILabel!
-    
     @IBOutlet weak var temperatureLabel: UILabel!
-    
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var summaryLabel: UILabel!
-    
     @IBOutlet weak var precipLabel: UILabel!
-    
     @IBOutlet weak var humidLabel: UILabel!
+    @IBOutlet weak var windSpeed: UILabel!
     
     
     var passedCity = City()
-    
     let apiController = APIController()
-    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
