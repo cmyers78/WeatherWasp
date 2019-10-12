@@ -24,7 +24,7 @@ class APIController: NSObject {
                 (data, response, error) in
                 
                 if error != nil {
-                    print(error?.localizedDescription)
+                    print(error?.localizedDescription ?? "Fucking Error")
                     return
                 }
                 
