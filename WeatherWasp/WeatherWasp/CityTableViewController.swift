@@ -8,31 +8,6 @@
 
 import UIKit
 import CoreLocation
-// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
-// Consider refactoring the code to use the non-optional operators.
-fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l < r
-  case (nil, _?):
-    return true
-  default:
-    return false
-  }
-}
-
-// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
-// Consider refactoring the code to use the non-optional operators.
-fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l > r
-  default:
-    return rhs < lhs
-  }
-}
-
-
 
 class CityTableViewController: UITableViewController {
     
@@ -43,14 +18,54 @@ class CityTableViewController: UITableViewController {
     
     var citiesArray = [City]()
     var theCity = City()
+    var locationManager = CLLocationManager()
+    var currentLocation: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.loadCityArray()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationPermissions()
+    }
+    
+    func locationPermissions() {
+        locationManager.delegate = self
+        let status = CLAuthorizationStatus.authorizedWhenInUse
+        if status != .denied {
+            locationManager.startUpdatingLocation()
+            locationManager.requestLocation()
+       //     locationManager.stopUpdatingLocation()
+            
+        }
         
     }
-
+    
+    func findAndSetCurrent(from location: CLLocation) {
+        
+        print(location.coordinate.latitude)
+        print(location.coordinate.longitude)
+        CLGeocoder().reverseGeocodeLocation(location) { (placemark, error) in
+            if error != nil {
+                print("didn't work")
+            } else {
+                print(placemark)
+                let foundLocation = placemark?.first
+                print("\(foundLocation?.locality), \(foundLocation?.administrativeArea)")
+                if let city = foundLocation?.locality, let state = foundLocation?.administrativeArea {
+                    self.currentLocation = "\(city), \(state)"
+                }
+                let currentCity = City()
+                currentCity.latitude = location.coordinate.latitude
+                currentCity.longitude = location.coordinate.longitude
+                currentCity.name = "Current Location"
+                currentCity.zipCode = self.currentLocation ?? ""
+                self.citiesArray.insert(currentCity, at: 0)
+                self.tableView.reloadData()
+            }
+        }
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -169,12 +184,10 @@ class CityTableViewController: UITableViewController {
         CLGeocoder().geocodeAddressString(location) {
             
             (placemarks, error) in
-            
-            if placemarks?.count > 0 {
-                let placemark = placemarks?[0]
-                let location = placemark!.location
-                let coordinate = location?.coordinate
-                completion((coordinate?.latitude)!, (coordinate?.longitude)!)
+            guard let placemark = placemarks, let location = placemark.first?.location else { return }
+            if placemark.count > 0 {
+                let coordinate = location.coordinate
+                completion((coordinate.latitude), (coordinate.longitude))
             }
         }
     }
@@ -196,7 +209,7 @@ class CityTableViewController: UITableViewController {
             
             if let arrayOfCities = NSKeyedUnarchiver.unarchiveObject(with: data) as? [City] {
                 
-                self.citiesArray = arrayOfCities
+                self.citiesArray.append(contentsOf: arrayOfCities)
                 self.tableView.reloadData()
             }
             
@@ -205,4 +218,26 @@ class CityTableViewController: UITableViewController {
         }
     }
 
+}
+
+extension CityTableViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        locationPermissions()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if !citiesArray.isEmpty {
+            let current = CLLocation().coordinate
+            print("locations: \(locations.last)")
+            guard let location = locations.first else { return }
+            findAndSetCurrent(from: location)
+            manager.stopUpdatingLocation()
+        }
+        manager.stopUpdatingLocation()
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
 }

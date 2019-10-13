@@ -32,20 +32,12 @@ class APIController: NSObject {
                     print(jsonDictionary)
                 
                     if let currentlyDict = jsonDictionary["currently"] as? JSONDictionary {
-                        
-                        print(currentlyDict)
-                        
                         let theWeatherData = WeatherData(dict: currentlyDict)
                         
                         DispatchQueue.main.async(execute: {
                             self.delegate?.passWeather(theWeatherData)
-                            
-                            
                         })
-                        
-                        print(theWeatherData)
                     }
-                    
                 } else {
                     print("I could not parse the dictionary")
                 }

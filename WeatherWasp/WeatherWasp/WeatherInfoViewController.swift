@@ -38,20 +38,16 @@ class WeatherInfoViewController: UIViewController, WeatherAPIDelegate {
         self.cityNameLabel.text = self.passedCity.name
        
         self.temperatureLabel.text = "00°"
-        
-        
-        
-        
     }
 
     func passWeather(_ weather : WeatherData) {
         
         print("the weather has passed")
         self.temperatureLabel.text = String(Int(weather.temperature)) + "°"
-        self.precipLabel.text = String((weather.precipProbability * 100)) + "%"
-        
+        self.precipLabel.text = "Chance of Rain: \(weather.precipProbability)%"
+        self.windSpeed.text = "Wind: \(weather.windSpeed)"
         let humid = (weather.humidity) * 100
-        self.humidLabel.text = String(humid) + "%"
+        self.humidLabel.text = "Humidity: \(humid)%"
         
         if weather.icon == "clear-day" {
             self.imageView.image = UIImage(named: "clear-day")
